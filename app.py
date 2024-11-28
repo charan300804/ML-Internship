@@ -19,7 +19,7 @@ with open(file_path, "r") as file:
     intents = json.load(file)
 
 # Create the vectorizer and classifier
-vectorizer = TfidfVectorizer()
+vectorizer = TfidfVectorizer(ngram_range=(1, 4))
 clf = LogisticRegression(random_state=0, max_iter=10000)
 
 # Preprocess the data
