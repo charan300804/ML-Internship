@@ -47,7 +47,7 @@ counter = 0
 
 def main():
     global counter
-    st.title("Intents of Chatbot using NLP")
+    st.title("Chat bot using NLP for Career guidance after 10th standard ")
 
     # Create a sidebar menu with options
     menu = ["Home", "Conversation History", "About"]
@@ -55,8 +55,7 @@ def main():
 
     # Home Menu
     if choice == "Home":
-        st.write("Welcome to the chatbot. Please type a message and press Enter to start the conversation.")
-
+        st.write("Welcome to the Career Guidance Chatbot for post-10th students. Type your query, and we’ll guide you.")
         # Check if the chat_log.csv file exists, and if not, create it with column names
         if not os.path.exists('chat_log.csv'):
             with open('chat_log.csv', 'w', newline='', encoding='utf-8') as csvfile:
@@ -64,8 +63,7 @@ def main():
                 csv_writer.writerow(['User Input', 'Chatbot Response', 'Timestamp'])
 
         counter += 1
-        user_input = st.text_input("You:", key=f"user_input_{counter}")
-
+        user_input = st.text_input("user:", key=f"user_input_{counter}")
         if user_input:
 
             # Convert the user input to a string
@@ -101,32 +99,32 @@ def main():
                 st.markdown("---")
 
     elif choice == "About":
-        st.write("The goal of this project is to create a chatbot that can understand and respond to user input based on intents. The chatbot is built using Natural Language Processing (NLP) library and Logistic Regression, to extract the intents and entities from user input. The chatbot is built using Streamlit, a Python library for building interactive web applications.")
+        st.write("The goal of this project is to develop a chatbot that provides career guidance for students after the 10th standard. The chatbot uses Natural Language Processing (NLP) and Logistic Regression to understand and respond to user queries by extracting relevant intents and entities. Built with Streamlit, a Python library for interactive web applications, the chatbot offers personalized career advice based on the user's input.")
 
-        st.subheader("Project Overview:")
+        st.subheader("Project Summary:")
 
         st.write("""
         The project is divided into two parts:
-        1. NLP techniques and Logistic Regression algorithm is used to train the chatbot on labeled intents and entities.
-        2. For building the Chatbot interface, Streamlit web framework is used to build a web-based chatbot interface. The interface allows users to input text and receive responses from the chatbot.
+        1.NLP & Logistic Regression: Used to train the chatbot on intents and entities related to career guidance after the 10th standard.
+        2.Streamlit Interface: A web-based platform built with Streamlit for user interaction, providing personalized career advice.
         """)
 
-        st.subheader("Dataset:")
+        st.subheader("Data Details:")
 
         st.write("""
-        The dataset used in this project is a collection of labelled intents and entities. The data is stored in a list.
-        - Intents: The intent of the user input (e.g. "greeting", "budget", "about")
-        - Entities: The entities extracted from user input (e.g. "Hi", "How do I create a budget?", "What is your purpose?")
-        - Text: The user input text.
+        The dataset used in this project consists of labeled intents and entities, stored in a structured list:
+
+          Intents: Represents the user's career-related query or goal (e.g., "career options", "education path", "skills needed").
+          Entities: Key details extracted from the user’s input (e.g., "What career options are available after 10th?", "What skills are needed for engineering?", "What are the study options after 10th?").
+          Text: The user’s input text seeking career guidance after 10th standard.
         """)
 
-        st.subheader("Streamlit Chatbot Interface:")
+        st.subheader("Career Guidance Chatbot Streamlit Interface")
+        st.write("The chatbot interface is built using Streamlit, featuring a text input box for users to submit their queries and a chat window to display the chatbot’s responses. The interface utilizes the trained model to process user input and generate relevant career guidance.")
 
-        st.write("The chatbot interface is built using Streamlit. The interface includes a text input box for users to input their text and a chat window to display the chatbot's responses. The interface uses the trained model to generate responses to user input.")
+        st.subheader("Project Wrap-up:")
 
-        st.subheader("Conclusion:")
-
-        st.write("In this project, a chatbot is built that can understand and respond to user input based on intents. The chatbot was trained using NLP and Logistic Regression, and the interface was built using Streamlit. This project can be extended by adding more data, using more sophisticated NLP techniques, deep learning algorithms.")
+        st.write("This project developed a career guidance chatbot for students after the 10th standard, using NLP and Logistic Regression for understanding user queries. Built with Streamlit, the chatbot provides an interactive interface for exploring career options. Future work could include expanding the dataset and using advanced NLP and deep learning techniques to enhance its capabilities.")
 
 if __name__ == '__main__':
     main()
